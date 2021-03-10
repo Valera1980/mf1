@@ -3,18 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OneComponent } from './one/one.component';
+import { FederationOneModule } from './federation-one/federation-one.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OneComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FederationOneModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [FederationOneModule]
 })
 export class AppModule { }

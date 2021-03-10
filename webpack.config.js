@@ -19,11 +19,11 @@ module.exports = {
     new ModuleFederationPlugin({
       
         // For remotes (please adjust)
-        // name: "mf1",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },        
+        name: "mf1",
+        filename: "remoteEntry.js",
+        exposes: {
+          './Module': './src/app/federation-one/federation-one.module.ts',
+        },        
         
         // For hosts (please adjust)
         // remotes: {
@@ -32,10 +32,10 @@ module.exports = {
         // },
 
         shared: {
-          "@angular/core": { singleton: true, strictVersion: true }, 
-          "@angular/common": { singleton: true, strictVersion: true }, 
-          "@angular/router": { singleton: true, strictVersion: true },
-
+          "@angular/core": { singleton: true, strictVersion: false }, 
+          "@angular/common": { singleton: true, strictVersion: false }, 
+          "@angular/router": { singleton: true, strictVersion: false },
+         
           ...sharedMappings.getDescriptors()
         }
         
